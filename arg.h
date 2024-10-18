@@ -98,7 +98,48 @@ struct Lopts_ {
 						&& ARGH_STRCMP(lopts_[lopt_i_].lopt,\
 						lopt_argv0_); lopt_i_++);\
 					if (lopts_[lopt_i_].opt == 0)\
-					continue;\
+						continue;\
+					argv[0][0] = tmpc_;\
+					*(--argv[0]) = lopts_[lopt_i_].opt;\
+					*(--argv[0]) = '-';\
+				}\
+				for (brk_ = 0, argv[0]++, argv_ = argv;\
+						argv[0][0] && !brk_;\
+						argv[0]++) {\
+					if (argv_ != argv)\
+						break;\
+					argc_ = argv[0][0];\
+					switch (argc_)
+
+#define ELONG_ARGBEGIN(x) for (argv0 = *argv, argv++, argc--;\
+					argv[0] && argv[0][0] == '-'\
+					&& argv[0][1];\
+					argc--, argv++) {\
+				char argc_;\
+				char tmpc_;\
+				char **argv_;\
+				char *lopt_argv0_;\
+				int lopt_i_;\
+				int brk_;\
+				if (argv[0][1] == '-' && argv[0][2] == '\0') {\
+					argv++;\
+					argc--;\
+					break;\
+				}\
+				if (argv[0][1] == '-' && argv[0][2] != '\0') {\
+					lopt_argv0_ = &argv[0][2];\
+					while (argv[0][0] != '\0' &&\
+							argv[0][0] != '=')\
+						argv[0]++;\
+					tmpc_ = argv[0][0];\
+					argv[0][0] = '\0';\
+					for (lopt_i_ = 0; lopts_[lopt_i_].opt != 0\
+						&& ARGH_STRCMP(lopts_[lopt_i_].lopt,\
+						lopt_argv0_); lopt_i_++);\
+					if (lopts_[lopt_i_].opt == 0) {\
+						(x);
+						continue;\
+					}\
 					argv[0][0] = tmpc_;\
 					*(--argv[0]) = lopts_[lopt_i_].opt;\
 					*(--argv[0]) = '-';\
