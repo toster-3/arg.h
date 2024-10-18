@@ -137,7 +137,7 @@ struct Lopts_ {
 						&& ARGH_STRCMP(lopts_[lopt_i_].lopt,\
 						lopt_argv0_); lopt_i_++);\
 					if (lopts_[lopt_i_].opt == 0) {\
-						(x);
+						(x);\
 						continue;\
 					}\
 					argv[0][0] = tmpc_;\
