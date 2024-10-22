@@ -72,6 +72,8 @@ struct Lopts_ {
 
 #define LONG_ARGSTRUCT	struct Lopts_ lopts_[] =
 
+#define ARGSTRUCT	LONG_ARGSTRUCT
+
 #define LONG_ARGBEGIN	for (argv0 = *argv, argv++, argc--;\
 					argv[0] && argv[0][0] == '-'\
 					&& argv[0][1];\
