@@ -13,6 +13,7 @@ extern "C" {
 
 #ifndef ARGH_STRCMP
 #define ARGH_STRCMP strcmp
+#include <string.h>
 #endif
 
 #ifndef ARGH_LONG_OPT_SIZE
