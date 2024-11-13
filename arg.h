@@ -16,14 +16,10 @@ extern "C" {
 #include <string.h>
 #endif
 
-#ifndef ARGH_LONG_OPT_SIZE
-#define ARGH_LONG_OPT_SIZE 64
-#endif
-
 extern char *argv0;
 
 struct Lopts_ {
-	char lopt[ARGH_LONG_OPT_SIZE];
+	char *lopt;
 	char opt;
 };
 
