@@ -2,14 +2,6 @@
 #include <stdlib.h> /* for exit */
 
 /*
- * ARGH_LONG_OPT_SIZE is the maximum size of the
- * long option string in LONG_ARGSTRUCT
- * If you want to use it you must define it before including arg.h
- * By default it is set to 64
- */
-#define ARGH_LONG_OPT_SIZE 13
-
-/*
  * ARGH_STRCMP can be set if you dont want to use the
  * standard library function strcmp
  * If it isnt set before including arg.h then
